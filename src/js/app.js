@@ -39,7 +39,8 @@ products.forEach((product) => {
   const price = clone.querySelector(".price");
   const discountPriceEl = clone.querySelector(".discount-price");
 
-  cardTitle.textContent = textContent;
+  cardTitle.textContent = title;
+  rating.textContent = _rating;
   description.textContent = _description;
   cardImage.src = thumbnail;
 
