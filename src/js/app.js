@@ -17,22 +17,21 @@ themeToggler.addEventListener("click", () => {
 });
 
 import { products } from "./data.js";
-import  formatNumber   from "./formatNumber.js";
+import formatNumber from "./formatNumber.js";
 
 const template = document.querySelector("template");
 const productList = document.getElementById("products-list");
 
-
-products.forEach((product) =>{
+products.forEach((product) => {
   const clone = template.content.cloneNode(true);
-   const {
-  title,
-  description: _description, 
-  thumbnail,                 
-  price:_price,               
-  discountPercentage,
-  rating: _rating             
-} = product;
+  const {
+    title,
+    description: _description,
+    thumbnail,
+    price: _price,
+    discountPercentage,
+    rating: _rating,
+  } = product;
   const cardImage = clone.querySelector(".card-image");
   const cardTitle = clone.querySelector(".card-title");
   const rating = clone.querySelector(".rating");
@@ -40,18 +39,15 @@ products.forEach((product) =>{
   const price = clone.querySelector(".price");
   const discountPriceEl = clone.querySelector(".discount-price");
 
-  
   cardTitle.textContent = textContent;
   description.textContent = _description;
   cardImage.src = thumbnail;
 
-  const discountPrice = formatNumber(_price, product.discountPercentage)
-  discountPriceEl.textContent =  discountPrice 
-  price.textContent = formatNumber(price)
+  const discountPrice = formatNumber(_price, product.discountPercentage);
+  discountPriceEl.textContent = discountPrice;
+  price.textContent = formatNumber(_price);
   productList.appendChild(clone);
-})
-  
-
+});
 
 // const ulEl = document.querySelector("ul");
 // const form = document.querySelector("form");
