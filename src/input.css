@@ -3,12 +3,18 @@
 @plugin "daisyui" {
   themes: all;
 }
-
+html,
+body {
+  @apply flex flex-col;
+}
+main {
+  @apply grow;
+}
 @layer components {
-  .btn {
-    @apply border rounded-2xl px-2 py-2 cursor-pointer;
+  .align-elements {
+    @apply max-w-6xl px-4 mx-auto;
   }
-  span {
-    @apply block mb-1 mt-2;
+  .btn {
+    @apply border rounded-2xl px-2 py-1 cursor-crosshair;
   }
 }
