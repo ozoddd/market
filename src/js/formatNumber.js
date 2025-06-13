@@ -4,3 +4,4 @@ export const formatNumber = (price, discount = 0) => {
     currency: "EUR",
   }).format(price - (price / 100) * discount);
 };
+export default formatNumber;
