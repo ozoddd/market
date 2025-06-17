@@ -1,7 +1,7 @@
 const formatNumber = (price, discount = 0) => {
-  return new Intl.NumberFormat("de-DE", {
+  return new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "EUR",
+    currency: "USD",
   }).format(price - (price / 100) * discount);
 };
 

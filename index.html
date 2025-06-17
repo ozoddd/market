@@ -1,159 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="cupcake" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tailwindcss</title>
-    <link rel="stylesheet" href="src/output.css" />
+    <title>Online-shop</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
-  <body class="max-w-6xl px-4 mx-auto mt-20 mb-2">
-    <header class="header bg-base-300 mb-10">
-      <div class="navbar align-elements">
+  <body>
+    <header class="header travel-bg w-[100%] max-w-[100wh] mb-10">
+      <div class="navbar align-elements border-b-2 pb-5 mb-20">
         <div class="navbar-start">
-          <a class="text-3xl font-sans opacity-50" href="#">Market</a>
+          <a class="flex gap-2 items-center logo-family text-2xl" href=""
+            ><span
+              class="rounded-[50%] border-2 p-2 border-red-500 text-red-500"
+              >BIM</span
+            ></a
+          >
         </div>
         <div class="navbar-center">
-          <ul class="menu menu-horizontal">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
+          <ul class="menu menu-horizontal text-2xl">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
           </ul>
         </div>
-
-        <div class="navbar-end">
-          <label class="swap swap-rotate">
-            <input type="checkbox" id="theme-toggler" />
-
+        <div class="navbar-end gap-4">
+          <select id="price-sort" class="select">
+            <option disabled selected>Narx bo'yicha saralash</option>
+            <option data-price="hight">Eng qimmati</option>
+            <option data-price="low">Eng arzoni</option>
+          </select>
+          <label class="input">
             <svg
-              class="swap-on h-10 w-10 fill-current"
+              class="h-[1em] opacity-50"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
-              <path
-                d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
-              />
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input
+              type="search"
+              class="grow"
+              id="search"
+              placeholder="Search"
+            />
+            <kbd class="kbd kbd-sm">⌘</kbd>
+            <kbd class="kbd kbd-sm">K</kbd>
+          </label>
+          <div class="indicator">
+            <span
+              id="products-counter"
+              class="indicator-item badge badge-primary badge-sm"
+              >0</span
+            >
+            <i class="fa-solid fa-cart-shopping text-3xl"></i>
+          </div>
+          <label class="toggle text-base-content">
+            <input
+              type="checkbox"
+              value="synthwave"
+              class="theme-controller"
+              id="theme-taggler"
+            />
+
+            <svg
+              aria-label="sun"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2"></path>
+                <path d="M12 20v2"></path>
+                <path d="m4.93 4.93 1.41 1.41"></path>
+                <path d="m17.66 17.66 1.41 1.41"></path>
+                <path d="M2 12h2"></path>
+                <path d="M20 12h2"></path>
+                <path d="m6.34 17.66-1.41 1.41"></path>
+                <path d="m19.07 4.93-1.41 1.41"></path>
+              </g>
             </svg>
 
             <svg
-              class="swap-off h-10 w-10 fill-current"
+              aria-label="moon"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
-              <path
-                d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
-              />
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+              </g>
             </svg>
           </label>
         </div>
       </div>
     </header>
-    <main class="main">
-      <section class="section">
+    <main>
+      <section>
         <div class="align-elements">
-          <div class="flex items-center justify-between">
-            <h2 class="text-3xl font-bold mb-5">Product:</h2>
-            <label class="input">
-              <svg
-                class="h-[1em] opacity-50"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
+          <p id="no-result" class="text-3xl text-center mt-24 hidden">
+            This product is not found :(
+          </p>
+          <ul
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+            id="products-list"
+          >
+            <template>
+              <li
+                class="card border-[0.5px] rounded-4xl mb-4 hover:shadow-2xl transition-all"
               >
-                <g
-                  stroke-linejoin="round"
-                  stroke-linecap="round"
-                  stroke-width="2.5"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <path d="m21 21-4.3-4.3"></path>
-                </g>
-              </svg>
-              <input type="search" class="grow" placeholder="Search" />
-              <kbd class="kbd kbd-sm">⌘</kbd>
-              <kbd class="kbd kbd-sm">K</kbd>
-            </label>
-          </div>
-        </div>
-        <ul
-          id="products-list"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-        >
-          <template>
-            <li class="card w-full bg-gray-50 shadow-2xl">
-              <button class="btn btn-square">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2.5"
-                  stroke="currentColor"
-                  class="w-6 h-6 hover:bg-white"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                  />
-                </svg>
-              </button>
+                <figure>
+                  <img class="card-image" src="" />
+                </figure>
+                <div class="card-body">
+                  <h2 class="card-title font-bold text-xl"></h2>
+                  <div class="flex">
+                    <p class="rating opacity-50"></p>
+                    <p class="comments opacity-50"></p>
+                  </div>
 
-              <figure>
-                <img
-                  class="card-image"
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                  alt="Shoes"
-                />
-              </figure>
-              <div class="card-body text-gray-800 dark:text-gray-400">
-                <h2 class="card-title">Card Title</h2>
-                <p class="description line-clamp-3">
-                  A card component has a figure, a body part, and inside body
-                  there are title and actions parts
-                </p>
-                <p class="rating">⭐5 (995 sharhrlar)</p>
-                <p class="line-through opacity-55 price">10 000 000</p>
-                <p class="discount-price">4 099 000</p>
-                <div class="card-actions justify-end">
-                  <button
-                    type="button"
-                    class="relative w-12 h-12 bg-gray-900 hover:bg-pink-600 text-white rounded-full flex items-center justify-center transition duration-300 shadow-lg"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="2"
-                      stroke="currentColor"
-                      class="w-6 h-6"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 8h14l-2-8M10 21h4"
-                      />
-                    </svg>
+                  <p class="description line-clamp-2"></p>
+                  <p class="price line-through opacity-50"></p>
+                  <p class="discount-price"></p>
 
-                    <span
-                      class="absolute -top-1 -right-1 bg-pink-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full shadow"
-                    >
-                      3
-                    </span>
-                  </button>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary buy-button">
+                      <i class="fa-solid fa-cart-plus text-2xl"></i>
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </template>
-        </ul>
+              </li>
+            </template>
+          </ul>
+        </div>
       </section>
     </main>
-    <footer class="mt-3">
+    <footer class="bg-neutral">
       <div
         class="align-elements footer sm:footer-horizontal text-neutral-content items-center p-4"
       >
@@ -171,8 +177,8 @@
               d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"
             ></path>
           </svg>
-          <p class="flex items-center gap-5">
-            Copyright © <span id="year"></span> - All right reserved
+          <p>
+            &copy; <span id="year"></span> Online-shop.com. All rights reserved.
           </p>
         </aside>
         <nav
@@ -220,7 +226,6 @@
         </nav>
       </div>
     </footer>
-
     <script type="module" src="./src/js/app.js"></script>
   </body>
 </html>
