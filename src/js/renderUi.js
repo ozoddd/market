@@ -1,5 +1,6 @@
 import formatNumber from "./formatNumber.js";
 import { addBAsket } from "./basket.js";
+import { request } from "./request.js";
 
 const template = document.querySelector("template");
 const productsList = document.getElementById("products-list");
@@ -29,7 +30,7 @@ export function renderUi(products) {
     const buyButton = clone.querySelector(".buy-button");
 
     buyButton.addEventListener("click", () => {
-      addBAsket({...product,amount:1});
+      addBAsket({ ...product, amount: 1 });
     });
 
     cardTitle.textContent = title;

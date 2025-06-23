@@ -26,14 +26,25 @@ priceSort.addEventListener("change", (e) => {
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
-
 if (theme) {
   html.dataset.theme = theme;
-  themeTaggler.checked = html.dataset.theme == "retro" ? true : false;
+  themeToggler.checked = html.dataset.theme == "dracula" ? true : false;
 }
 
-themeTaggler.addEventListener("click", () => {
-  html.dataset.theme = html.dataset.theme == "cupcake" ? "retro" : "cupcake";
+themeToggler.addEventListener("click", () => {
+  html.dataset.theme = html.dataset.theme == "light" ? "dracula" : "light";
+
   localStorage.setItem("theme", html.dataset.theme);
-  themeTaggler.checked = html.dataset.theme == "retro" ? true : false;
+  themeToggler.checked = html.dataset.theme == "dracula" ? true : false;
 });
+
+// if (theme) {
+//   html.dataset.theme = theme;
+//   themeTaggler.checked = html.dataset.theme == "dracula" ? true : false;
+// }
+
+// themeTaggler.addEventListener("click", () => {
+//   html.dataset.theme = html.dataset.theme == "cupcake" ? "dracula" : "cupcake";
+//   localStorage.setItem("theme", html.dataset.theme);
+//   themeTaggler.checked = html.dataset.theme == "dracula" ? true : false;
+// });
